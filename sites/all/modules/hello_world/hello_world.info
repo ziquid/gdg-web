@@ -1,0 +1,7 @@
+name = Hello World
+description = Hello, World for MediaCurrent
+core = 7.x
+dependencies[] = block
+
+version = "7.x-0.1"
+datestamp = "1356056686"

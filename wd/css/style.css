@@ -1,0 +1,261 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+body.home-page{margin:0;
+background: url(../images/home-page-bg.jpg) no-repeat #000 center;}
+	
+body.dc-page{margin:0;
+background: url(../images/dc-page-bg.jpg) no-repeat #000 center; height:640px;}
+
+body.park-page{margin:0;
+background: url(../images/park-page-bg.jpg) no-repeat #000 center;}
+	
+
+.home-page .nav{
+/*	background-image:url(../images/home-page-nav.png); 
+	background-repeat:repeat-x; */
+	width:960px; 
+	height:47px; 
+	margin-left:auto; 
+	margin-right:auto;
+	background-color:#9c2538;
+}
+
+.dc-page .nav{
+/*	background-image:url(../images/dc-page-nav.png); 
+	background-repeat:repeat-x; */
+	width:960px; 
+	height:47px; 
+	margin-left:auto; 
+	margin-right:auto;
+	background-color:#9c2538;	
+}
+
+.park-page .nav{
+/*	background-image:url(../images/dc-page-nav.png); 
+	background-repeat:repeat-x; 
+	height:47px; 	*/
+	width:960px; 
+	margin-left:auto; 
+	margin-right:auto;
+	background-color:#9c2538;
+}
+
+.navbar{width:960px; height:47px; margin-left:auto; margin-right:auto;}
+.navbar1{width:380px; height:47px; float:left;}
+.navbar2{width:350px; height:47px; float:right;}
+.login-signup{
+	font-weight: bold;
+	padding-right: 5px;	
+}
+.navbar1 ul {padding:14px; width:380px; margin-left:auto; margin-right:auto; margin-top:0px;}
+.navbar1 ul li{list-style:none; float:left; padding-left:30px; color:#FFF; font-size:12pt; font-size:12pt; font-family:Arial, Helvetica, sans-serif;}
+
+.navbar2 ul {padding:14px; margin-left:auto; margin-right:auto; margin-top:0px;}
+.navbar2 ul li{list-style:none; float:left; padding-left:10px; color:#FFF; font-size:12pt; font-family:Arial, Helvetica, sans-serif;}
+
+.content{height: 545px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;}
+.leftcol{ width:360px; height:545px; float:left;}
+.block1{width:209px; height:322px; background-image:url(../images/left_bg.png); position: relative; top:140px; left:10px; color:#FFF; font-size:.8cm; text-align:center;} 
+.block1 p{width:150px; }
+
+.rightcol{ width:600px; height:545x; float:left;}
+.rightbgh{
+	background-color: #9C2538;
+    background-image: url("../images/right_bgh.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 52px;
+    left: 140px;
+    position: relative;
+    top: 45px;
+    width: 428px;	
+}
+.rightbgdd{width:249px; height:184px; background-image:url(../images/right_bgdd.png); position: relative; top:-404px; left:240px;}
+.rightbgdd ul{width:180px; list-style:none; color:#000; font-size:18pt; padding-left:12px; padding-top:48px; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;}
+.rightbgdd ul li{padding-top:10px;}
+
+.block2{
+	width:428px; 
+	height:373px; 
+	background-image:url(../images/right_bg.png); 
+	position: relative; 
+	top:45px; 
+	left:140px;
+	overflow:auto;
+}
+.block2 ul{
+	width:320px; 
+	list-style:none; 
+	padding-left:8px; 
+	padding-top:0px; 
+	margin-top:0px; 
+	color:#FFF !important; 
+	font-size:15pt; 
+	font-family:Arial, Helvetica, sans-serif;
+}
+.block2 ul a{
+	color:#FFF !important;
+}
+.block2 ul li{padding-top:28px;}
+
+.leftimg ul{list-style:none; width:65px;}
+.leftimg ul li{padding-top:5px;}
+.rightxt ul li{padding-top:30px;}
+
+body.dc-page .block2 li.first{
+	padding-top:30px !important;	
+}
+body.dc-page .rightxt li.first{
+	padding-top:35px !important;	
+}
+.footer{background-image:url(../images/footer.png); width:960px; height:36px; margin-left:auto; margin-right:auto; color:#F00; font-size:14pt; text-align: center; margin-top:6px; word-spacing:12px;}
+
+body.dc-page .footer{background-image:url(../images/red_footer.png); width:960px; height:36px; margin-left:auto; margin-right:auto; color:#F00; font-size:14pt; text-align: center; margin-top:6px; word-spacing:12px;}
+
+.blue{color:#3104fa;}
+.FL{float:left;}
+.FR{float:right;}
+.PT10{padding-top:20px;}
+.PL25{padding-left:25px;}
+.PT28{padding-top:28px;}
+.PL45{padding-left:45px;}
+.PT20{padding-top:20px;}
+.PB0{padding-bottom:0px;}
+.MT0{margin-top:0px;}
+
+
+input{
+/*	background:url(../images/text_box.png);
+	width:129px;
+	height:25px;*/
+	border:none;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	color:#999;
+	font-size:16px;
+	padding-left:5px;
+}
+.home-page select{
+	left: 409px;
+    position: relative;
+    top: 200px;
+	padding:5px;
+	background-color:#022359;
+	border:1px solid #ACCCFF;
+	color:#FFF;
+	font-weight:bold;
+}
+
+
+.fb_widget{
+	width:228px;
+	 height:154px; 
+	 background-image:url(../images/fb_widget.png); 
+	 position: relative; 
+	 top:22px; 
+	 left:10px; 
+	 color:#000; 
+	 font-size:.5cm; 
+	 text-align:center; 
+	 word-spacing:5px;
+} 
+.fb_widget p{width:150px; }
+
+.twitter_widget{width:228px; height:154px; background-image:url(../images/twitter_widget.png); position: relative; top:28px; left:10px; color:#000; font-size:.5cm; text-align:center; word-spacing:5px;} 
+.twitter_widget p{width:150px; }
+
+.scr_widget{width:228px; height:154px; background-image:url(../images/scr_widget.png); position: relative; top:35px; left:10px; color:#000; font-size:.5cm; text-align:center;  word-spacing:5px;} 
+.scr_widget p{width:150px; }
+
+.tv{
+	width:384px; 
+	height:247px; 
+	background-image:url(../images/tv.png); 
+	position: relative; 
+	top:130px; 
+	left:170px; 
+	color:#FFF; 
+	font-size:.8cm; 
+	text-align:center;
+} 
+.tv iframe{
+	margin-left: 6px;
+    margin-top: 16px;	
+	border:none;
+}
+
+/* liScroll styles */
+
+.tickercontainer { /* the outer div with the black border */
+	height: 36px;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	width: 960px;
+}
+.tickercontainer .mask { /* that serves as a mask. so you get a sort of padding both left and right */
+position: relative;
+
+top: 2px;
+width: 960px;
+overflow: hidden;
+}
+ul.newsticker { /* that's your list */
+position: relative;
+left: 750px;
+
+list-style-type: none;
+margin: 0;
+padding: 0;
+
+}
+ul.newsticker li {
+float: left; /* important: display inline gives incorrect results when you check for elem's width */
+margin: 0;
+padding: 0;
+
+}
+ul.newsticker a {
+white-space: nowrap;
+padding: 0;
+color: #ff0000;
+
+margin: 0 50px 0 0;
+} 
+ul.newsticker span {
+margin: 0 15px 0 0;
+} 
+
+.fb_widget .slide-up {  
+    padding: 15px;  
+    width:  150px; 
+    height: 70px; 
+    top:  0; 
+    left: 0;
+	margin-left:25px;
+	margin-top:31px;
+} 
+.twitter_widget .slide-up {  
+    padding: 15px;  
+    width:  150px; 
+    height: 70px; 
+    top:  0; 
+    left: 0;
+	margin-left:25px;
+	margin-top:31px;
+} 
+.scr_widget .slide-up {  
+    padding: 15px;  
+    width:  150px; 
+    height: 70px; 
+    top:  0; 
+    left: 0;
+	margin-left:25px;
+	margin-top:22px;
+} 
