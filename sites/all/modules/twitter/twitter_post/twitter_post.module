@@ -105,18 +105,18 @@ dpm($vid, 'vid');
 // http://drupal.stackexchange.com/questions/8722/how-do-i-get-a-list-of-all-taxonomy-terms-assigned-to-a-node
 
       $term_query = db_select('taxonomy_index', 'ti');
-      $ttd_alias = $term_query->join('taxonomy_term_data', 'ttd', 'ti.tid = %alias.tid');
+      $ttd_alias = $term_query->join('taxonomy_term_data', 'ttd',
+        'ti.tid = %alias.tid');
       $term_query->addField($ttd_alias, 'name');
       $term_query->condition('ti.nid', $node->nid)
         ->condition($ttd_alias . '.vid', $vid);
-dpq($term_query, FALSE, 'db query');
       $terms = $term_query->execute()
-        ->fetchAssoc();
+        ->fetchAll();
 dpm($terms, 'terms');
       if ($terms) { // if any terms
 
         foreach ($terms as $term) { // loop through terms
-
+dpm($term, 'term');
           $replacements['hashtags'] .= ' ' . $term->name;
 
         } // foreach term

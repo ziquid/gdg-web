@@ -40,7 +40,7 @@ function twitter_post_admin_settings($form, &$form_state) {
     '#maxlength' => 140,
     '#description' => t('The given text will be used as a template for posting to Twitter.com. ' .
                         'The following token replacements are available: !url, !url-alias, !tinyurl, !title, !user, and !hashtags.'),
-    '#default_value' => variable_get('twitter_post_default_format', 'New post: !title !tinyurl !hashtags'),
+    '#default_value' => variable_get('twitter_post_default_format', 'New post: !title !hashtags !tinyurl'),
   );
 
   $form['twitter_post_default_value'] = array(
