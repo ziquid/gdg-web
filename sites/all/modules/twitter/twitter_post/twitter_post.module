@@ -100,9 +100,18 @@ function twitter_post_node_insert($node) {
 
     if ($vid != 0) { // yes, user has selected a vocab for hashtags
 
-// from http://rocktreesky.com/drupal-twitter-hashtag-hack
-      $terms = taxonomy_node_get_terms($node);
+// from http://rocktreesky.com/drupal-twitter-hashtag-hack and
+// https://drupal.org/node/1517744 and
+// http://drupal.stackexchange.com/questions/8722/how-do-i-get-a-list-of-all-taxonomy-terms-assigned-to-a-node
 
+      $term_query = db_select('taxonomy_index', 'ti');
+      $ttd_alias = $term_query->join('taxonomy_term_data', 'ttd', 'ti.tid = %alias.tid');
+      $terms = $term_query->fields($ttd_alias, 'name')
+        ->condition('ti.nid', $node->nid)
+        ->condition($ttd_alias . '.vid', $vid)
+        ->execute()
+        ->fetchAssoc();
+dpm ($terms, 'terms');
       if ($terms) { // if any terms
 
         foreach ($terms as $term) { // loop through terms

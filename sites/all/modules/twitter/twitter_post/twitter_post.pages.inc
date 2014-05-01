@@ -24,7 +24,7 @@ function twitter_post_admin_settings($form, &$form_state) {
   $vocab_array = array('0' => '(do not add hashtags)');
 
   foreach ($vocabulary as $item)
-    $vocab_array[$item->vid] = $item->name;
+    $vocab_array[$item->vid] = check_plain($item->name);
 
   $form['twitter_post_vocabs'] = array(
     '#title' => t('Vocabulary name'),
