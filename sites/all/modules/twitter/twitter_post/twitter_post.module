@@ -128,7 +128,7 @@ function twitter_post_node_insert($node) {
           dpm($replacements['!title'], 'title after checking ' . $term->name);
 
 // no replacements?  add to tag string
-          if (!count) $replacements['!hashtags'] .= ' #' . $term->name;
+          if (!$count) $replacements['!hashtags'] .= ' #' . $term->name;
 
         } // foreach term
 
