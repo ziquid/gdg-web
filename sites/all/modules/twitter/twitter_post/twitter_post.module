@@ -97,7 +97,7 @@ function twitter_post_node_insert($node) {
 
 // add support for hashtags
     $vid = variable_get('twitter_post_vocabs', 0);
-dpm($vid, 'vid');
+
     if ($vid != 0) { // yes, user has selected a vocab for hashtags
 
 // from http://rocktreesky.com/drupal-twitter-hashtag-hack and
@@ -112,12 +112,12 @@ dpm($vid, 'vid');
         ->condition($ttd_alias . '.vid', $vid);
       $terms = $term_query->execute()
         ->fetchAll();
-dpm($terms, 'terms');
+
       if ($terms) { // if any terms
 
         foreach ($terms as $term) { // loop through terms
 dpm($term, 'term');
-          $replacements['hashtags'] .= ' ' . $term->name;
+          $replacements['!hashtags'] .= ' ' . $term->name;
 
         } // foreach term
 
