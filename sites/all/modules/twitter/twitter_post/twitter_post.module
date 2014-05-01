@@ -132,14 +132,13 @@ function twitter_post_node_insert($node) {
 
         } // foreach term
 
-// drop the first space, if any
-        $replacements['!hashtags'] = @substr($replacements['!hashtags'], 1);
-
       } // any terms?
 
     } // user wants hashtags?
 
-    $status = strtr($node->twitter['status'], $replacements);
+// trim and squeeze extra spaces
+    $status = trim(preg_replace('/\s+/', ' ',
+      strtr($node->twitter['status'], $replacements)));
 
 dsm($status, 'would post this to twitter');
 
