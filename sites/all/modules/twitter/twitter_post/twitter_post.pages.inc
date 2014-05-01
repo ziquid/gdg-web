@@ -30,7 +30,7 @@ function twitter_post_admin_settings($form, &$form_state) {
     '#title' => t('Vocabulary name'),
     '#type' => 'checkboxes',
     '#description' => t('Choose which vocabulary\'s tagged terms should be included as hashtags when posting to Twitter.'),
-    '#options' => $vocab_array;
+    '#options' => $vocab_array,
     '#default_value' => variable_get('twitter_post_vocabs', NULL),
   );
 
