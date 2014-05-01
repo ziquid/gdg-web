@@ -97,7 +97,7 @@ function twitter_post_node_insert($node) {
 
 // add support for hashtags
     $vid = variable_get('twitter_post_vocabs', 0);
-
+dpm($vid, 'vid');
     if ($vid != 0) { // yes, user has selected a vocab for hashtags
 
 // from http://rocktreesky.com/drupal-twitter-hashtag-hack and
