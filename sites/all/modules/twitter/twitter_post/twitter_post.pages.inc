@@ -21,7 +21,7 @@ function twitter_post_admin_settings($form, &$form_state) {
 // https://api.drupal.org/api/drupal/modules%21taxonomy%21taxonomy.module/function/taxonomy_get_vocabularies/7
 
   $vocabulary = taxonomy_get_vocabularies();
-  $vocab_array = array('0' => '--none--');
+  $vocab_array = array('0' => '(do not add hashtags)');
 
   foreach ($vocabulary as $item)
     $vocab_array[$item->vid] = $item->name;
@@ -39,8 +39,8 @@ function twitter_post_admin_settings($form, &$form_state) {
     '#title' => t('Default format string'),
     '#maxlength' => 140,
     '#description' => t('The given text will be used as a template for posting to Twitter.com. ' .
-                        'The following token replacements are available: !url, !url-alias, !tinyurl, !title, and !user'),
-    '#default_value' => variable_get('twitter_post_default_format', 'New post: !title !tinyurl'),
+                        'The following token replacements are available: !url, !url-alias, !tinyurl, !title, !user, and !hashtags'),
+    '#default_value' => variable_get('twitter_post_default_format', 'New post: !title !tinyurl !hashtags'),
   );
 
   $form['twitter_post_default_value'] = array(
