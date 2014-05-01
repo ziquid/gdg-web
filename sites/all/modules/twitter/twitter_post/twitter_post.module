@@ -121,7 +121,7 @@ function twitter_post_node_insert($node) {
 
 // if the term is already there as a hashtag, do nothing
           if (preg_match('/\b#' . $term->name . '\b/',
-            $replacements['!title']) continue;
+            $replacements['!title'])) continue;
 
 // if we can replace a term in the title with its hashtag equivalent, do so
           $count = 0;
