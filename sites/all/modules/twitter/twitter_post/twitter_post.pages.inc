@@ -17,6 +17,23 @@ function twitter_post_admin_settings($form, &$form_state) {
     '#default_value' => variable_get('twitter_post_types', NULL),
   );
 
+// borrowed from
+// https://api.drupal.org/api/drupal/modules%21taxonomy%21taxonomy.module/function/taxonomy_get_vocabularies/7
+
+  $vocabulary = taxonomy_get_vocabularies();
+  $vocab_array = array('0' => '--none--');
+
+  foreach ($vocabulary as $item)
+    $vocab_array[$item->vid] = $item->name;
+
+  $form['twitter_post_vocabs'] = array(
+    '#title' => t('Vocabulary name'),
+    '#type' => 'checkboxes',
+    '#description' => t('Choose which vocabulary\'s tagged terms should be included as hashtags when posting to Twitter.'),
+    '#options' => $vocab_array;
+    '#default_value' => variable_get('twitter_post_vocabs', NULL),
+  );
+
   $form['twitter_post_default_format'] = array(
     '#type' => 'textfield',
     '#title' => t('Default format string'),
@@ -35,3 +52,4 @@ function twitter_post_admin_settings($form, &$form_state) {
 
   return system_settings_form($form);
 }
+
