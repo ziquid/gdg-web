@@ -118,13 +118,19 @@ function twitter_post_node_insert($node) {
       if ($terms) { // if any terms
 
         foreach ($terms as $term) { // loop through terms
-dpm($term, 'term');
-          $replacements['!hashtags'] .= ' #' . $term->name;
+
+// if we can replace a term in the title with its hashtag equivalent, do so
+          $count = 0;
+          $replacements['!title'] = preg_replace('/\b' . $term->name . '\b/',
+            '#' . $term->name , $replacements['!title'], 1, $count);
+
+// no replacements?  add to tag string
+          if (!count) $replacements['!hashtags'] .= ' #' . $term->name;
 
         } // foreach term
 
-        $replacements['!hashtags'] = substr($replacements['!hashtags'], 1);
-// remove first space
+// drop the first space, if any
+        $replacements['!hashtags'] = @substr($replacements['!hashtags'], 1);
 
       } // any terms?
 
