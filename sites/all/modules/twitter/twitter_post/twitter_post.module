@@ -111,7 +111,7 @@ dpm($vid, 'vid');
         ->condition($ttd_alias . '.vid', $vid);
 dpq($term_query, FALSE, 'db query');
       $terms = $term_query->execute()
-        ->fetchAll();
+        ->fetchAssoc();
 dpm($terms, 'terms');
       if ($terms) { // if any terms
 
