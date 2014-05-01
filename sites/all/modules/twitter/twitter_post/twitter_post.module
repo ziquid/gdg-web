@@ -112,16 +112,12 @@ dpm($vid, 'vid');
 dpq($term_query, FALSE, 'db query');
       $terms = $term_query->execute()
         ->fetchAll();
-dpr($terms, FALSE, 'terms');
+dpm($terms, 'terms');
       if ($terms) { // if any terms
 
         foreach ($terms as $term) { // loop through terms
 
-          if ($term->vid == $vid) { // if they are in our vid
-
-            $replacements['hashtags'] .= ' ' . $term->name;
-
-          } // in our vid
+          $replacements['hashtags'] .= ' ' . $term->name;
 
         } // foreach term
 
