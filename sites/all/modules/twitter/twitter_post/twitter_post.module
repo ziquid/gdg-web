@@ -106,12 +106,13 @@ function twitter_post_node_insert($node) {
 
       $term_query = db_select('taxonomy_index', 'ti');
       $ttd_alias = $term_query->join('taxonomy_term_data', 'ttd', 'ti.tid = %alias.tid');
-      $terms = $term_query->fields($ttd_alias, 'name')
+      $term_query->addField($ttd_alias, 'name')
         ->condition('ti.nid', $node->nid)
-        ->condition($ttd_alias . '.vid', $vid)
-        ->execute()
+        ->condition($ttd_alias . '.vid', $vid);
+dpq($term_query, 'db query');
+      $terms = $term_query->execute()
         ->fetchAssoc();
-dpm ($terms, 'terms');
+dpr($terms, 'terms');
       if ($terms) { // if any terms
 
         foreach ($terms as $term) { // loop through terms
