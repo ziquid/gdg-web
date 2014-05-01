@@ -121,8 +121,11 @@ function twitter_post_node_insert($node) {
 
 // if we can replace a term in the title with its hashtag equivalent, do so
           $count = 0;
+          dpm($replacements['!title'], 'title before checking ' . $term->name);
           $replacements['!title'] = preg_replace('/\b' . $term->name . '\b/',
             '#' . $term->name , $replacements['!title'], 1, $count);
+          dpm($count, 'number of replacements found');
+          dpm($replacements['!title'], 'title after checking ' . $term->name);
 
 // no replacements?  add to tag string
           if (!count) $replacements['!hashtags'] .= ' #' . $term->name;
