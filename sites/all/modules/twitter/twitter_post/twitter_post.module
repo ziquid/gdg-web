@@ -109,10 +109,10 @@ dpm($vid, 'vid');
       $term_query->addField($ttd_alias, 'name');
       $term_query->condition('ti.nid', $node->nid)
         ->condition($ttd_alias . '.vid', $vid);
-dpq($term_query, 'db query');
+dpq($term_query, FALSE, 'db query');
       $terms = $term_query->execute()
         ->fetchAll();
-dpr($terms, 'terms');
+dpr($terms, FALSE, 'terms');
       if ($terms) { // if any terms
 
         foreach ($terms as $term) { // loop through terms
