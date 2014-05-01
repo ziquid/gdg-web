@@ -31,7 +31,7 @@ function twitter_post_admin_settings($form, &$form_state) {
     '#type' => 'select',
     '#description' => t('Choose which vocabulary\'s tagged terms should be included as hashtags when posting to Twitter.'),
     '#options' => $vocab_array,
-    '#default_value' => variable_get('twitter_post_vocabs', NULL),
+    '#default_value' => variable_get('twitter_post_vocabs', 0),
   );
 
   $form['twitter_post_default_format'] = array(
@@ -39,7 +39,7 @@ function twitter_post_admin_settings($form, &$form_state) {
     '#title' => t('Default format string'),
     '#maxlength' => 140,
     '#description' => t('The given text will be used as a template for posting to Twitter.com. ' .
-                        'The following token replacements are available: !url, !url-alias, !tinyurl, !title, !user, and !hashtags'),
+                        'The following token replacements are available: !url, !url-alias, !tinyurl, !title, !user, and !hashtags.'),
     '#default_value' => variable_get('twitter_post_default_format', 'New post: !title !tinyurl !hashtags'),
   );
 

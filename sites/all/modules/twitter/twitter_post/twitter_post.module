@@ -82,6 +82,7 @@ function twitter_post_node_insert($node) {
 
     $twitter_account = twitter_account_load($node->twitter['account']);
     $replacements = array(
+      '!hashtags' => '',
       '!title' => $node->title,
       '!url' => url('node/' . $node->nid, array('absolute' => TRUE, 'alias' => TRUE)),
       '!url-alias' => url('node/' . $node->nid, array('absolute' => TRUE)),
@@ -94,10 +95,37 @@ function twitter_post_node_insert($node) {
       $replacements['!tinyurl'] = twitter_shorten_url(url('node/' . $node->nid, array('absolute' => TRUE)));
     }
 
+// add support for hashtags
+    $vid = variable_get('twitter_post_vocabs', 0);
+
+    if ($vid != 0) { // yes, user has selected a vocab for hashtags
+
+// from http://rocktreesky.com/drupal-twitter-hashtag-hack
+      $terms = taxonomy_node_get_terms($node);
+
+      if ($terms) { // if any terms
+
+        foreach ($terms as $term) { // loop through terms
+
+          if ($term->vid == $vid) { // if they are in our vid
+
+            $replacements['hashtags'] .= ' ' . $term->name;
+
+          } // in our vid
+
+        } // foreach term
+
+      } // any terms?
+
+    } // user wants hashtags?
+
     $status = strtr($node->twitter['status'], $replacements);
-    if (twitter_set_status($twitter_account, $status)) {
-      drupal_set_message(t('Successfully posted to Twitter'));
-    }
+
+dsm($status, 'would post this to twitter');
+
+//     if (twitter_set_status($twitter_account, $status)) {
+//       drupal_set_message(t('Successfully posted to Twitter'));
+//     }
   }
 }
 
