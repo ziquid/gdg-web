@@ -110,7 +110,7 @@ function twitter_post_node_insert($node) {
       $term_query->addField($ttd_alias, 'name');
       $term_query->condition('ti.nid', $node->nid)
         ->condition($ttd_alias . '.vid', $vid)
-        ->orderBy($ttd_alias . 'weight', 'ASC');
+        ->orderBy($ttd_alias . '.weight', 'ASC');
       $terms = $term_query->execute()
         ->fetchAll();
 
