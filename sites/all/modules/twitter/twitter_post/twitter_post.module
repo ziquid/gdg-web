@@ -141,11 +141,9 @@ function twitter_post_node_insert($node) {
     $status = trim(preg_replace('/\s+/', ' ',
       strtr($node->twitter['status'], $replacements)));
 
-dsm($status, 'would post this to twitter');
-
-//     if (twitter_set_status($twitter_account, $status)) {
-//       drupal_set_message(t('Successfully posted to Twitter'));
-//     }
+    if (twitter_set_status($twitter_account, $status)) {
+      drupal_set_message(t('Successfully posted to Twitter'));
+    }
   }
 }
 
