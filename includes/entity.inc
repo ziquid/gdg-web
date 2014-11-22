@@ -369,7 +369,7 @@ class DrupalDefaultEntityController implements DrupalEntityControllerInterface {
             // operation: only if the value is not at all in the condition array
             // we remove the entity.
             if (!in_array($entity->{$property_name}, $condition)) {
-          unset($entities[$entity->{$this->idKey}]);
+              unset($entities[$entity->{$this->idKey}]);
               continue 2;
             }
           }

@@ -772,13 +772,13 @@ function taxonomy_update_7005(&$sandbox) {
         db_insert($table_name)->fields($columns)->values($values)->execute();
         // Only insert a record in the taxonomy index if the node is published.
         if ($record->status) {
-        // Update the {taxonomy_index} table.
-        db_insert('taxonomy_index')
-          ->fields(array('nid', 'tid', 'sticky', 'created',))
-          ->values(array($record->nid, $record->tid, $record->sticky, $record->created))
-          ->execute();
+          // Update the {taxonomy_index} table.
+          db_insert('taxonomy_index')
+            ->fields(array('nid', 'tid', 'sticky', 'created',))
+            ->values(array($record->nid, $record->tid, $record->sticky, $record->created))
+            ->execute();
+        }
       }
-    }
     }
 
     // Store the set of inserted values and the current revision's deltas in the
