@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Recent feeds feature feature.
+ */
+
+include_once 'recent_feeds_feature.features.inc';
