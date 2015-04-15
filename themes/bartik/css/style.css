@@ -36,7 +36,7 @@ h2 {
   font-size: 1.143em;
 }
 p {
-  margin: 0 0 1.2em;
+  margin: 16px 0;
 }
 del {
   text-decoration: line-through;
@@ -53,7 +53,7 @@ kbd,
 samp,
 var {
   padding: 0 0.4em;
-  font-size: 0.857em;
+  font-size: 0.77em;
   font-family: Menlo, Consolas, "Andale Mono", "Lucida Console", "Nimbus Mono L", "DejaVu Sans Mono", monospace, "Courier New";
 }
 code {
@@ -294,7 +294,7 @@ ul.tips {
 }
 #logo {
   float: left; /* LTR */
-  padding: 15px 15px 15px 10px; /* LTR */
+  padding: 15px 15px 15px 36px; /* LTR */
 }
 #name-and-slogan {
   float: left; /* LTR */
@@ -535,10 +535,10 @@ h1#site-name {
   line-height: 1.4;
   padding: 20px 0 45px;
   margin: 0;
-  background: #f0f0f0;
-  background: rgba(30, 50, 10, 0.08);
+  background: white;
+/*  background: rgba(30, 50, 10, 0.08); */
   border-bottom: 1px solid #e7e7e7;
-  text-shadow: 1px 1px #fff;
+/*  text-shadow: 1px 1px #333; */
 }
 #featured h2 {
   font-size: 1.174em;
@@ -704,6 +704,7 @@ ul.links {
 }
 .comment .submitted .comment-permalink {
   font-size: 0.786em;
+  text-transform: lowercase;
 }
 .comment .content {
   font-size: 0.929em;
@@ -849,9 +850,9 @@ ul.links {
   text-decoration: underline;
 }
 #footer-wrapper .block {
-  margin: 20px 0;
-  border: 1px solid #444;
-  border-color: rgba(255, 255, 255, 0.1);
+  margin: 8px 0;
+/*  border: 1px solid #444;
+  border-color: rgba(255, 255, 255, 0.1); */
   padding: 10px;
 }
 #footer-columns .block-menu,
@@ -910,16 +911,28 @@ ul.links {
 }
 #footer {
   letter-spacing: 0.2px;
-  margin-top: 30px;
-  border-top: 1px solid #555;
+/*  margin-top: 30px;
+  border-top: 1px solid #555; */
   border-color: rgba(255, 255, 255, 0.15);
 }
 #footer .region {
-  margin-top: 20px;
+/*  margin-top: 20px; */
 }
 #footer .block {
-  clear: both;
+/*  clear: both; */
+  float: left;
+  margin-right: 8px;
 }
+
+#footer #block-menu-menu-footer-menu {
+  float: right;
+  padding-right: 8px;
+}
+
+#footer #block-menu-menu-footer-menu a {
+  text-decoration: none;
+}
+
 #footer ul,
 #footer li {
   list-style: none;
@@ -1325,6 +1338,14 @@ input.form-button-disabled:active,
   color: #717171;
 }
 
+/* Animated throbber */
+html.js input.form-autocomplete {
+  background-position: 100% 4px; /* LTR */
+}
+html.js input.throbbing {
+  background-position: 100% -16px; /* LTR */
+}
+
 /* Comment form */
 .comment-form label {
   float: left; /* LTR */
@@ -1479,7 +1500,7 @@ ol.search-results {
 }
 .search-results li:last-child {
   border-bottom: none;
-  padding-bottom: 0;
+  padding-bottom: none;
   margin-bottom: 1em;
 }
 .search-results .search-snippet-info {
@@ -1638,4 +1659,327 @@ div.admin-panel .description {
 }
 #footer-wrapper .poll .bar .foreground {
   background-color: #ddd;
+}
+
+
+
+body.block {
+  color: white;
+  font-style: Helvetica, Arial, sans-serif;
+}
+
+body.front .block-block {
+  color: white;
+}
+
+body.front #featured {
+  height: 432px;
+}
+
+#block-rotating-banner-1 .content {
+  margin: 0;
+}
+
+#block-rotating-banner-1 {
+/*  position: absolute;
+  top: 172px;
+  left: 48px;
+*/
+  margin-top: 24px;
+}
+
+#block-block-18 {
+  position: absolute;
+  top: 492px;
+  left: 721px;
+  z-index: 999;
+}
+
+body.page-about .view-about-us th, body.page-about .view-about-us tr{
+  background-color:#FFF;
+}
+
+body.page-about .view-about-us .views-field-field-bio-headshot{
+  text-align:center;
+  vertical-align: top;
+}
+
+body.page-about .view-about-us .views-field-body{
+  padding-top:0px;
+}
+
+body.page-about .view-about-us p{
+  margin-bottom:6px;
+}
+
+#footer-wrapper #footer-columns{
+  float:right;
+}
+
+.region-footer-fourthcolumn{
+  float:right;
+  margin-top:53px;
+}
+
+#block-menu-menu-footer-menu h2{
+  display:none;
+}
+
+#block-menu-menu-footer-menu li{
+  float:left;
+}
+
+#block-menu-menu-footer-menu li a{
+  border-bottom:none !important;
+  border-color:#292929;
+}
+
+#block-menu-menu-footer-menu li a:hover{
+   background-color:#292929 !important;
+}
+
+#footer-wrapper .region-footer-fourthcolumn{
+  width:auto !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top:0px;
+}
+
+/**
+ * Slider size css  240x384
+**/
+/*
+body.node-type-game-landing-page .jcarousel-skin-default .jcarousel-container-horizontal, 
+body.node-type-game-landing-page .jcarousel-clip-horizontal,
+body.node-type-game-landing-page .jcarousel-item-horizontal{
+  height:384px !important;
+}
+
+body.node-type-game-landing-page .jcarousel-item-horizontal{
+   width: 240px !important;
+}
+
+body.node-type-game-landing-page .jcarousel-clip-horizontal{
+  width: 500px !important;
+}
+
+body.node-type-game-landing-page .jcarousel-next-horizontal{
+  right: -50px;
+}
+
+body.node-type-game-landing-page .jcarousel-prev-horizontal, body.node-type-game-landing-page .jcarousel-next-horizontal{
+  top: 196px;
+}*/
+
+/**
+ * Slider size css  160x256
+**/
+
+body.node-type-game-landing-page .jcarousel-skin-default .jcarousel-container-horizontal, 
+body.node-type-game-landing-page .jcarousel-clip-horizontal,
+body.node-type-game-landing-page .jcarousel-item-horizontal{
+  height:256px !important;
+}
+
+body.node-type-game-landing-page .jcarousel-item-horizontal{
+   width: 160px !important;
+}
+
+body.node-type-game-landing-page .jcarousel-clip-horizontal{
+  width: 508px !important;
+}
+body.node-type-game-landing-page .jcarousel-skin-default .jcarousel-container-horizontal {
+  width: 380px !important;
+}
+body.node-type-game-landing-page .jcarousel-next-horizontal{
+  right: -118px;
+}
+
+body.node-type-game-landing-page .jcarousel-prev-horizontal, body.node-type-game-landing-page .jcarousel-next-horizontal{
+  top: 112px;
+}
+body.node-type-game-landing-page .jcarousel-container{
+  margin:0px;
+  padding-top:0px;
+  padding-bottom:0px;
+  padding-left: 29px;
+}
+.jcarousel-skin-default .jcarousel-prev-horizontal {
+  left:0px;
+}
+
+
+body.node-type-game-landing-page .landing-page-title{
+  position:relative;
+  top:-6px;
+  left:5px;
+}
+
+
+/**
+ *  Game landing page games block
+**/
+#block-views-games-listing-block-block{
+  float:left;
+  background-color:#FFF;
+  border:none;
+}
+.flt-lft{
+  float:left;
+}
+.view-games-listing-block{
+  font-family:Droid Sans,Arial,sans-serif;
+}
+.view-games-listing-block .name{
+  margin-left:10px;
+ 
+}
+.main-block-game-listing-row{
+  width:100%;
+  padding-bottom:5px;
+}
+
+/**
+ *  Marketing Links block
+**/
+.view-market-links{
+  width: 100%;
+  float: left;
+  margin-bottom:10px;
+}
+.view-market-links ul{
+  padding:0px !important;
+}
+.view-market-links li{
+  float:left;
+  list-style:none;
+}
+.views-field-field-market-link-icon{
+  height: 48px;
+}
+
+/**
+ *  Game Landing page
+**/
+body.node-type-game-landing-page .field-name-field-game-youtube-video{
+  float:left;
+  margin-top:30px;
+}
+body.page-node-edit .field-name-field-game-youtube-video{
+  float:none;
+  margin-top:auto;
+}
+body.node-type-game-landing-page .field-name-field-game-youtube-video .field-label, body.node-type-game-landing-page #block-views-78bf2809cfd4a8781d1bd3f3a03159c4 h2,
+body.node-type-game-landing-page .field-name-field-game-description-2 .field-label{
+  display:none;
+}
+body.node-type-game-landing-page .field-name-field-game-description-2{
+  float:left;
+}
+body.page-node-edit .field-name-field-game-description-2{
+  float:none;
+}
+
+/**
+ *  Center Align Website
+**/
+
+#header div.section, #featured div.section, #messages div.section, #main, #triptych, #footer-columns, #footer {
+  margin-left: auto;
+  margin-right: auto;	
+}
+
+#logo {
+  padding-left:0px !important;
+}
+
+#footer {
+  width:888px !important;
+}
+
+#footer #block-menu-menu-footer-menu {
+  padding-right: 82px !important;	
+}
+
+/**
+ *  Lightbox Close Icon
+**/
+
+.node-type-game-landing-page #bottomNavClose {
+  position: absolute;
+  top: 0;
+  margin-left: 400px;
+  text-align: right;
+  margin-top: 1px !important;
+  padding: 0;
+  float: none;
+}
+.node-type-game-landing-page #numberDisplay{
+	dispaly:none;
+}
+.node-type-game-landing-page .lightbox2-alt-layout-data #bottomNavClose, .node-type-game-landing-page .lightbox2-alt-layout #bottomNavClose {
+  
+}
+.node-type-game-landing-page #nextLink{
+  height:602px !important;
+  margin-top:38px !important;
+}
+.node-type-game-landing-page #imageData #bottomNav {
+  height:auto !important;
+}
+body.node-type-game-landing-page .lightbox2-overlay{
+  height:100% !important;
+}
+
+body.node-type-game-landing-page #bottomNavClose {
+  background: url("../images/close.jpg") repeat scroll 0 0 transparent;
+    height: 10px !important;
+    width: 9px !important;
+}
+body.page-node-41 .submitted, body.page-node-37 .submitted{
+  display:none;
+}
+
+body.node-type-game-landing-page .outerImageContainer{
+	/*width:438px !important;*/
+}
+
+.main-por{
+	margin-bottom:5px;
+}
+.main-port .img,.main-port .body-wrap{
+	float:left;
+}
+.main-port .body-wrap{
+	width:650px;
+	float:left;
+	margin-left:5px;
+}
+.main-port{
+	float:left;
+	margin-bottom: 10px;
+}
+.main-port .img{
+	width:173px;
+	text-align:center;
+}
+.body-wrap a{
+	float:left;
+	margin-top:10px;
+	width:100%;
+}
+.body-wrap .title a{
+	float:none;
+}
+
+/* portfolio */
+
+#content .view-portfolio .title {
+  font-weight: bold;
+}
+
+
+div.geshifilter {
+  font-size: 16px !important;
 }
