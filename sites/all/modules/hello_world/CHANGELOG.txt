@@ -1,6 +1,0 @@
-CHANGELOG
-
-Hello World 7.x-0.1
-===================
-
-Initial release
