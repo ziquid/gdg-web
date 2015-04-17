@@ -1,118 +1,147 @@
 
 .rotating-banner {
-    height: auto;
-    margin: 0 auto;
-    width: 100%;
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
 }
+
 .rb-link {
-    display: block;
+  display: block;
 }
-.rotating-banner .rb-link:hover, .rotating-banner .rb-link:visited, .rotating-banner .rb-link:link, .rotating-banner .rb-link:active {
-    color: inherit;
-    font-size: inherit;
-    text-decoration: none;
+
+.rotating-banner .rb-link:hover,
+.rotating-banner .rb-link:visited,
+.rotating-banner .rb-link:link,
+.rotating-banner .rb-link:active {
+  font-size: inherit;
+  text-decoration: none;
+  color: inherit;
 }
+
 .rotating-banner .rb-slides {
-    height: auto;
-    overflow: hidden;
-    position: relative;
-    width: auto;
+  /* border: 1px dashed #aaa; */
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  width: auto;
 }
+
 .rb-textbox-wrapper {
-    white-space: nowrap;
+  white-space: nowrap;
 }
+
 .jCycleActivated-processed .rb-slide.tallest {
-    display: block !important;
-    position: relative !important;
+  display: block !important;
+  position: relative !important;
 }
+
 .rb-slide {
-    display: none;
-    line-height: 0;
-    opacity: 0;
+  display: none;
+  line-height: 0;
+  opacity: 0;
 }
+/* Hide all slides except the first one to avoid seeing both together before cycle inits */
 .rb-slide.rb-first-slide {
-    display: block;
-    opacity: 1;
+  display: block;
+  opacity: 1;
 }
+
 .fluid img {
-    height: auto;
-    width: 100%;
+  height: auto;
+  width: 100%;
 }
+
 .rb-textbox-type-header {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 1em;
+  font-size: 16px;
+  font-weight: bold;
 }
+
 .layout-wrapper {
-    font-size: 18px;
-    line-height: 28px;
-    position: absolute;
+  line-height: 1.5em;
+  position: absolute;
 }
+
 .layout-wrapper:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
+
 .layout-wrapper.top-left {
-    left: 0;
-    margin: 1em 0 0 1em;
-    top: 0;
+  left: 0;
+  margin: 1em 0 0 1em;
+  top: 0;
 }
+
 .layout-wrapper.top-right {
-    margin: 1em 1em 0 0;
-    right: 0;
-    text-align: right;
-    top: 0;
+  right: 0;
+  margin: 1em 1em 0 0;
+  text-align: right;
+  top: 0;
 }
+
 .layout-wrapper.bottom-left {
-    bottom: 0;
-    left: 0;
-    margin: 0 0 1em 1em;
+  bottom: 0;
+  margin: 0 0 1em 1em;
+  left: 0;
 }
+
 .layout-wrapper.bottom-right {
-    bottom: 0;
-    margin: 0 1em 1em 0;
-    right: 0;
-    text-align: right;
+  bottom: 0;
+  margin: 0 1em 1em 0;
+  text-align: right;
+  right: 0;
 }
+
 .layout-wrapper.custom {
-    height: 100%;
-    left: 0;
-    top: 0;
-    width: 100%;
+  left: 0;
+  height: 100%;
+  top: 0;
+  width: 100%;
 }
+
 .custom .rb-textbox-wrapper {
-    position: absolute;
+  position: absolute;
 }
+
 .controls {
-    text-align: center;
+  text-align: center;
 }
+
 .controls.none {
-    display: none;
+  display: none;
 }
+
 .controls a {
-    display: inline-block;
-    font-weight: bold;
-    line-height: 10px;
-    margin: 2px;
-    padding: 5px;
+  display: inline-block;
+  font-weight: bold;
+  margin: 2px;
+  padding: 5px;
+  line-height: 10px;
 }
+
 .controls.buttons a {
-    background: none repeat scroll 0 0 #ccc;
-    border-radius: 5px;
-    color: transparent;
-    font-size: 0;
-    height: 0;
-    text-indent: -2000px;
-    width: 0;
+  background: #CCC;
+  color: transparent;
+  font-size: 0;
+  height: 0;
+  text-indent: -2000px;
+  width: 0;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
+
 .controls.buttons a.activeSlide {
-    background: none repeat scroll 0 0 #000;
+  background: #000;
 }
+
 .controls.numbers a {
-    color: #ccc;
+  color: #CCC;
 }
+
 .controls.numbers a.activeSlide {
-    color: #000;
+  color: #000;
 }
+
 .static-wrapper {
-    overflow: hidden;
+  overflow: hidden;
 }
