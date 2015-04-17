@@ -1,3 +1,0 @@
-hello_world.module
-Copyright (c) 2012 by Joseph Cheek, joseph@cheek.com
-Released into the public domain

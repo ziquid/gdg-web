@@ -1,0 +1,14 @@
+name = GDG
+description = GoDogGo Theme, based on Stark
+core = 7.x
+
+stylesheets[all][] = css/layout.css
+
+fonts[typekit_api][] = "adelle-web#n7"
+fonts[typekit_api][] = "adelle-web#i7"
+fonts[typekit_api][] = "adelle-web#i4"
+fonts[typekit_api][] = "adelle-web#n4"
+fonts[typekit_api][] = "jaf-facitweb#n7"
+fonts[typekit_api][] = "jaf-facitweb#i7"
+fonts[typekit_api][] = "jaf-facitweb#i4"
+fonts[typekit_api][] = "jaf-facitweb#n4"
