@@ -8,6 +8,9 @@ projects[drupal][version] = "7.36"
 ; Modules
 projects[admin_menu][version] = "3.0-rc5"
 
+projects[advuser][subdir] = "contrib"
+projects[advuser][version] = "3.0-beta1"
+
 projects[auto_nodetitle][version] = "1.0"
 
 projects[block_class][version] = "2.1"
@@ -66,6 +69,9 @@ projects[pathauto][version] = "1.2"
 
 projects[rotating_banner][subdir] = "contrib"
 projects[rotating_banner][version] = "2.x-dev"
+
+projects[strongarm][subdir] = "contrib"
+projects[strongarm][version] = "2.0"
 
 projects[token][subdir] = "contrib"
 projects[token][version] = "1.6"
