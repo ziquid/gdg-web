@@ -4,7 +4,6 @@ api = 2
 
 ; Core
 projects[drupal][version] = "7.36"
-projects[drupal][type] = "core"
 
 ; Modules
 projects[admin_menu][version] = "3.0-rc5"
@@ -13,71 +12,97 @@ projects[auto_nodetitle][version] = "1.0"
 
 projects[block_class][version] = "2.1"
 
+projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.7"
 
 projects[ckeditor][version] = "1.16"
 
 projects[codefilter][version] = "1.1"
 
+projects[devel][subdir] = "contrib"
 projects[devel][version] = "1.5"
 
+projects[draggableviews][subdir] = "contrib"
 projects[draggableviews][version] = "2.1"
 
+projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.6"
 
+projects[features][subdir] = "contrib"
+projects[features][version] = "2.4"
+
+projects[media][subdir] = "contrib"
 projects[media][version] = "1.5"
 
+projects[geshifilter][subdir] = "contrib"
 projects[geshifilter][version] = "1.2"
 
+projects[panels][subdir] = "contrib"
 projects[panels][version] = "3.5"
 
+projects[jcarousel][subdir] = "contrib"
 projects[jcarousel][version] = "2.7"
 
+projects[libraries][subdir] = "contrib"
 projects[libraries][version] = "2.2"
 
+projects[lightbox2][subdir] = "contrib"
+projects[lightbox2][version] = "1.0-beta1"
+
+projects[link][subdir] = "contrib"
 projects[link][version] = "1.3"
 
+projects[markdown][subdir] = "contrib"
 projects[markdown][version] = "1.2"
 
+projects[mobile_theme][subdir] = "contrib"
 projects[mobile_theme][version] = "1.2"
 
+projects[oauth][subdir] = "contrib"
 projects[oauth][version] = "3.2"
 
+projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.2"
 
+projects[rotating_banner][subdir] = "contrib"
 projects[rotating_banner][version] = "2.x-dev"
 
+projects[token][subdir] = "contrib"
 projects[token][version] = "1.6"
 
+projects[twitter][subdir] = "contrib"
 projects[twitter][version] = "5.8"
 
+projects[typogrify][subdir] = "contrib"
 projects[typogrify][version] = "1.0-rc10"
 
+projects[video_embed_field][subdir] = "contrib"
 projects[video_embed_field][version] = "2.0-beta8"
 
+projects[views][subdir] = "contrib"
 projects[views][version] = "3.10"
 
 ; Themes
 projects[mobile][version] = "2.0"
-projects[mobile][type] = "theme"
 
-; Modules
-
-
-; Themes
+; Please fill the following out. Type may be one of get, git, bzr or svn,
+; and url is the url of the download.
 projects[gdg][download][type] = ""
 projects[gdg][download][url] = ""
 projects[gdg][type] = "theme"
 
 ; Libraries
+; Please fill the following out. Type may be one of get, git, bzr or svn,
+; and url is the url of the download.
 libraries[ckeditor][download][type] = ""
 libraries[ckeditor][download][url] = ""
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][type] = "library"
 
+; Please fill the following out. Type may be one of get, git, bzr or svn,
+; and url is the url of the download.
 libraries[geshi][download][type] = ""
 libraries[geshi][download][url] = ""
 libraries[geshi][directory_name] = "geshi"
 libraries[geshi][type] = "library"
-
 
