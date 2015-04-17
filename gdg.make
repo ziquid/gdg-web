@@ -36,7 +36,10 @@ projects[features][subdir] = "contrib"
 projects[features][version] = "2.4"
 
 projects[media][subdir] = "contrib"
-projects[media][version] = "1.5"
+projects[media][type] = "module"
+projects[media][download][type] = "git"
+projects[media][download][url] = "http://git.drupal.org/project/media.git"
+; projects[media][download][revision] = "7.x-2.x-dev"
 
 projects[geshifilter][subdir] = "contrib"
 projects[geshifilter][version] = "1.2"
