@@ -15,11 +15,20 @@
  * instances due to a positioning bug.
  */
 
+html, #page-wrapper, #page {
+  height: 100%;
+}
+
 body {
   font-family: 'jaf-facitweb';
   background-color: #333;
   color: white;
   margin: 0 40px;
+  height: 100%;
+}
+
+body.admin-menu {
+  height: 98%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,12 +38,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 3.3em;
 }
 
 .field-name-field-dek {
-  font-size: 1.3em;
+  font-size: 1.8em;
   margin-top: 66px;
+}
+
+
+.field-name-field-call-to-action {
+  text-align: center;
+  margin: 66px auto 40px;
+}
+
+.field-name-field-call-to-action .field-item {
+  display: inline-block;
+  padding: 19px 82px;
+  background-color: #2b3;
+  border-radius: 25px;
+  border: 3px solid white;
+}
+
+.field-name-field-call-to-action a,
+.field-name-field-call-to-action a:active
+.field-name-field-call-to-action a:focus,
+.field-name-field-call-to-action a:hover,
+.field-name-field-call-to-action a:visited {
+  color: white;
+  font-size: 1.8em;
 }
 
 li a, li a:active, li a:focus, li a:hover, li a:visited,
@@ -54,7 +86,10 @@ a#logo {
 
 
 #main-wrapper {
-  margin: 0 12%;
+  padding: 10% 15%;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 0 -40px;
+  height: 79%;
 }
 
 #content,
