@@ -8,17 +8,12 @@ projects[drupal][version] = "7.36"
 ; Modules
 projects[admin_menu][version] = "3.0-rc5"
 
-projects[advuser][subdir] = "contrib"
-projects[advuser][version] = "3.0-beta1"
-
 projects[auto_nodetitle][version] = "1.0"
 
 projects[block_class][version] = "2.1"
 
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.7"
-
-projects[ckeditor][version] = "1.16"
 
 projects[codefilter][version] = "1.1"
 
@@ -28,8 +23,14 @@ projects[devel][version] = "1.5"
 projects[draggableviews][subdir] = "contrib"
 projects[draggableviews][version] = "2.1"
 
+projects[fontyourface][subdir] = "contrib"
+projects[fontyourface][version] = "2.8"
+
 projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.6"
+
+projects[entityreference][subdir] = "contrib"
+projects[entityreference][version] = "1.1"
 
 projects[features][subdir] = "contrib"
 projects[features][version] = "2.4"
@@ -70,8 +71,14 @@ projects[pathauto][version] = "1.2"
 projects[rotating_banner][subdir] = "contrib"
 projects[rotating_banner][version] = "2.x-dev"
 
+projects[stage_file_proxy][subdir] = "contrib"
+projects[stage_file_proxy][version] = "1.7"
+
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
+
+projects[subpathauto][subdir] = "contrib"
+projects[subpathauto][version] = "1.3"
 
 projects[token][subdir] = "contrib"
 projects[token][version] = "1.6"
@@ -87,6 +94,9 @@ projects[video_embed_field][version] = "2.0-beta8"
 
 projects[views][subdir] = "contrib"
 projects[views][version] = "3.10"
+
+projects[wysiwyg][subdir] = "contrib"
+projects[wysiwyg][version] = "2.2"
 
 ; Themes
 projects[mobile][version] = "2.0"
