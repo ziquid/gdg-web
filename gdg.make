@@ -35,11 +35,8 @@ projects[entityreference][version] = "1.1"
 projects[features][subdir] = "contrib"
 projects[features][version] = "2.4"
 
-projects[media][subdir] = "contrib"
-projects[media][type] = "module"
-projects[media][download][type] = "git"
-projects[media][download][url] = "http://git.drupal.org/project/media.git"
-; projects[media][download][revision] = "7.x-2.x-dev"
+projects[file_entity][subdir] = "contrib"
+projects[file_entity][version] = "2.0-beta1"
 
 projects[geshifilter][subdir] = "contrib"
 projects[geshifilter][version] = "1.2"
@@ -61,6 +58,9 @@ projects[link][version] = "1.3"
 
 projects[markdown][subdir] = "contrib"
 projects[markdown][version] = "1.2"
+
+projects[media][subdir] = "contrib"
+projects[media][version] = "unknown"
 
 projects[mobile_theme][subdir] = "contrib"
 projects[mobile_theme][version] = "1.2"
