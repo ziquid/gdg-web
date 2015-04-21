@@ -33,7 +33,7 @@ projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = "1.1"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "2.4"
+projects[features][version] = "2.5"
 
 projects[file_entity][subdir] = "contrib"
 projects[file_entity][version] = "2.0-beta1"
@@ -60,7 +60,7 @@ projects[markdown][subdir] = "contrib"
 projects[markdown][version] = "1.2"
 
 projects[media][subdir] = "contrib"
-projects[media][version] = "unknown"
+projects[media][version] = "2.x-dev"
 
 projects[mobile_theme][subdir] = "contrib"
 projects[mobile_theme][version] = "1.2"
