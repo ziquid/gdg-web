@@ -56,6 +56,9 @@ projects[lightbox2][version] = "1.0-beta1"
 projects[link][subdir] = "contrib"
 projects[link][version] = "1.3"
 
+projects[logintoboggan][subdir] = "contrib"
+projects[logintoboggan][version] = "1.4"
+
 projects[markdown][subdir] = "contrib"
 projects[markdown][version] = "1.2"
 
