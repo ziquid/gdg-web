@@ -99,7 +99,7 @@ projects[video_embed_field][subdir] = "contrib"
 projects[video_embed_field][version] = "2.0-beta8"
 
 projects[views][subdir] = "contrib"
-projects[views][version] = "3.10"
+projects[views][version] = "3.11"
 
 projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.2"
