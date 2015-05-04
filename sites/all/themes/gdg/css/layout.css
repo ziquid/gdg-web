@@ -24,11 +24,6 @@ body {
   background-color: #fffaff;
   color: #2b3;
   margin: 0 40px;
-  height: 100%;
-}
-
-body.admin-menu {
-  height: 98%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -90,7 +85,7 @@ a#logo {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   margin: 0 -40px;
-  height: 79%;
+  height: 100%;
 }
 
 #content,
@@ -158,4 +153,9 @@ ul.tabs.primary li a {
 
 ul.tabs.primary li {
   display: block;
+}
+
+
+div.codeblock {
+  background-color: #6b6a69 !important;
 }
