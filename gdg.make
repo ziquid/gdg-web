@@ -68,6 +68,9 @@ projects[media][version] = "2.x-dev"
 projects[mobile_theme][subdir] = "contrib"
 projects[mobile_theme][version] = "1.2"
 
+projects[noindex_external_links][subdir] = "contrib"
+projects[noindex_external_links][version] = "2.0-rc1"
+
 projects[oauth][subdir] = "contrib"
 projects[oauth][version] = "3.2"
 
