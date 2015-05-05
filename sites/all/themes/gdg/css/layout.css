@@ -80,6 +80,15 @@ a#logo {
 }
 
 
+#header {
+  height: 123px;
+}
+
+.breadcrumb {
+  height: 33px;
+}
+
+
 #main-wrapper {
   padding: 10% 15%;
   background-color: rgba(0, 0, 0, 0.6);
