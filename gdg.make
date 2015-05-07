@@ -6,15 +6,19 @@ api = 2
 projects[drupal][version] = "7.36"
 
 ; Modules
+projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = "3.0-rc5"
 
+projects[auto_nodetitle][subdir] = "contrib"
 projects[auto_nodetitle][version] = "1.0"
 
+projects[block_class][subdir] = "contrib"
 projects[block_class][version] = "2.1"
 
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.7"
 
+projects[codefilter][subdir] = "contrib"
 projects[codefilter][version] = "1.1"
 
 projects[devel][subdir] = "contrib"
