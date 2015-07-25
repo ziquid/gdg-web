@@ -37,10 +37,10 @@ projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = "1.1"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "2.5"
+projects[features][version] = "2.6"
 
 projects[file_entity][subdir] = "contrib"
-projects[file_entity][version] = "2.0-beta1"
+projects[file_entity][version] = "2.0-beta2"
 
 projects[geshifilter][subdir] = "contrib"
 projects[geshifilter][version] = "1.2"
@@ -61,7 +61,7 @@ projects[link][subdir] = "contrib"
 projects[link][version] = "1.3"
 
 projects[logintoboggan][subdir] = "contrib"
-projects[logintoboggan][version] = "1.4"
+projects[logintoboggan][version] = "1.5"
 
 projects[markdown][subdir] = "contrib"
 projects[markdown][version] = "1.2"
@@ -103,7 +103,7 @@ projects[typogrify][subdir] = "contrib"
 projects[typogrify][version] = "1.0-rc10"
 
 projects[video_embed_field][subdir] = "contrib"
-projects[video_embed_field][version] = "2.0-beta8"
+projects[video_embed_field][version] = "2.0-beta10"
 
 projects[views][subdir] = "contrib"
 projects[views][version] = "3.11"
