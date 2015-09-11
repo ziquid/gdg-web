@@ -16,7 +16,7 @@ projects[block_class][subdir] = "contrib"
 projects[block_class][version] = "2.1"
 
 projects[ctools][subdir] = "contrib"
-projects[ctools][version] = "1.7"
+projects[ctools][version] = "1.9"
 
 projects[codefilter][subdir] = "contrib"
 projects[codefilter][version] = "1.1"
@@ -100,13 +100,13 @@ projects[token][subdir] = "contrib"
 projects[token][version] = "1.6"
 
 projects[twitter][subdir] = "contrib"
-projects[twitter][version] = "5.8"
+projects[twitter][version] = "6.1"
 
 projects[typogrify][subdir] = "contrib"
 projects[typogrify][version] = "1.0-rc10"
 
 projects[video_embed_field][subdir] = "contrib"
-projects[video_embed_field][version] = "2.0-beta10"
+projects[video_embed_field][version] = "2.0-beta11"
 
 projects[views][subdir] = "contrib"
 projects[views][version] = "3.11"
