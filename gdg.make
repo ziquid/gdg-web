@@ -72,6 +72,9 @@ projects[media][version] = "2.x-dev"
 projects[mobile_theme][subdir] = "contrib"
 projects[mobile_theme][version] = "1.2"
 
+projects[node_clone][subdir] = "contrib"
+projects[node_clone][version] = "1.0-rc2"
+
 projects[noindex_external_links][subdir] = "contrib"
 projects[noindex_external_links][version] = "2.0-rc1"
 

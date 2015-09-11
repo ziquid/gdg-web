@@ -9,3 +9,5 @@ nbproject/*
 
 sites/*/private
 modules/**
+sites/*/modules/contrib
+sites/all/libraries
