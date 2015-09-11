@@ -7,7 +7,7 @@
 /**
  * Implements hook_views_data().
  */
-function twitter_views_data() {
+function twitter_views_data_alter(&$data) {
   // Basic table information.
   $data['twitter']['table']['group']  = t('Twitter');
 
@@ -17,6 +17,23 @@ function twitter_views_data() {
     'title' => t('Twitter message'),
     'help' => t('Twitter status messages.'),
     'weight' => 10,
+  );
+
+  $data['users']['table']['join']['twitter'] = array(
+    'left_table' => 'twitter_account',
+    'left_field' => 'uid',
+    'field' => 'uid',
+  );
+  $data['users']['table']['join']['twitter_account'] = array(
+    //    'left_table' => 'twitter_user',
+    'left_field' => 'uid',
+    'field' => 'uid',
+  );
+
+  $data['twitter']['table']['join']['users'] = array(
+    'left_table' => 'twitter_account',
+    'left_field' => 'screen_name',
+    'field' => 'screen_name',
   );
 
   // Tweet ID
@@ -168,6 +185,7 @@ function twitter_views_data() {
 
   // Table twitter_account.
   $data['twitter_account']['table']['group']  = t('Twitter');
+  $data['twitter_account']['table']['group']  = t('Twitter Account');
   $data['twitter_account']['table']['join'] = array(
     'twitter' => array(
       'left_field' => 'screen_name',
@@ -345,25 +363,5 @@ function twitter_views_data() {
     'sort' => array(
       'handler' => 'views_handler_sort',
     ),
-  );
-
-  return $data;
-}
-
-
-/**
- * @todo Please document this function.
- * @see http://drupal.org/node/1354
- */
-function twitter_views_data_alter(&$data) {
-  $data['users']['table']['join']['twitter'] = array(
-    'left_table' => 'twitter_account',
-    'left_field' => 'uid',
-    'field' => 'uid',
-  );
-  $data['users']['table']['join']['twitter_account'] = array(
-    //    'left_table' => 'twitter_user',
-    'left_field' => 'uid',
-    'field' => 'uid',
   );
 }

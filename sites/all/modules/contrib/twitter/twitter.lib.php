@@ -44,10 +44,11 @@ class Twitter {
     }
   }
 
-  public function get_request_token() {
+  public function get_request_token($params = array()) {
+    $oauth_callback = variable_get('twitter_oauth_callback_url', TWITTER_OAUTH_CALLBACK_URL);
     $url = variable_get('twitter_api', TWITTER_API) . '/oauth/request_token';
     try {
-      $params = array('oauth_callback' => url('twitter/oauth', array('absolute' => TRUE)));
+      $params += array('oauth_callback' => url($oauth_callback, array('absolute' => TRUE)));
       $response = $this->auth_request($url, $params);
     }
     catch (TwitterException $e) {
@@ -109,11 +110,18 @@ class Twitter {
   public function auth_request($url, $params = array(), $method = 'GET') {
     $request = OAuthRequest::from_consumer_and_token($this->consumer, $this->token, $method, $url, $params);
     $request->sign_request($this->signature_method, $this->consumer, $this->token);
-    switch ($method) {
-      case 'GET':
-        return $this->request($request->to_url());
-      case 'POST':
-        return $this->request($request->get_normalized_http_url(), $request->get_parameters(), 'POST');
+
+    try {
+      switch ($method) {
+        case 'GET':
+          return $this->request($request->to_url());
+        case 'POST':
+          return $this->request($request->get_normalized_http_url(), $request->get_parameters(), 'POST');
+      }
+    }
+    catch (TwitterException $e) {
+      watchdog('twitter', '!message', array('!message' => $e->__toString()), WATCHDOG_ERROR);
+      return FALSE;
     }
   }
 
@@ -151,6 +159,16 @@ class Twitter {
       throw new TwitterException($error);
     }
   }
+  
+  /**
+   *
+   * @see https://dev.twitter.com/docs/api/1/post/statuses/retweet/%3Aid
+   */
+  public function retweet($tweet_id, $params = array()) {
+    $params = array();
+    $values = $this->call('statuses/retweet/' . $tweet_id, $params, 'POST', TRUE);
+    return new TwitterStatus($values);
+  }
 
   /**
    * Actually performs a request.
@@ -169,15 +187,19 @@ class Twitter {
    *   stdClass response object.
    */
   protected function doRequest($url, $headers, $method, $data) {
-    return drupal_http_request($url, array('headers' => $headers, 'method' => $method, 'data' => $data));
+    $response = drupal_http_request($url, array('headers' => $headers, 'method' => $method, 'data' => $data));
+    return $response;
   }
 
+  /**
+   * @see https://www.drupal.org/node/985544
+   */
   protected function parse_response($response) {
-    // http://drupal.org/node/985544 - json_decode large integer issue
     $length = strlen(PHP_INT_MAX);
-    $response = preg_replace('/"(id|in_reply_to_status_id)":(\d{' . $length . ',})/', '"\1":"\2"', $response);
+    $response = preg_replace('/"(id|in_reply_to_status_id|in_reply_to_user_id)":(\d{' . $length . ',})/', '"\1":"\2"', $response);
     return json_decode($response, TRUE);
   }
+
   /**
    * Creates an API endpoint URL.
    *
@@ -196,12 +218,13 @@ class Twitter {
   /********************************************//**
    * Helpers used to convert responses in objects
    ***********************************************/
+
   /**
-   * Get an array of TwitterStatus objects from an API endpoint
+   * Get an array of TwitterStatus objects from an API endpoint.
    */
   protected function get_statuses($path, $params = array()) {
     $values = $this->call($path, $params, 'GET');
-    // Check on successfull call
+    // Check on successfull call.
     if ($values) {
       $statuses = array();
       foreach ($values as $status) {
@@ -209,16 +232,45 @@ class Twitter {
       }
       return $statuses;
     }
-    // Call might return FALSE , e.g. on failed authentication
+    // Call might return FALSE, e.g. on failed authentication.
     else {
-      // As call allready throws an exception, we can return an empty array to
+      // As call already throws an exception, we can return an empty array to
       // break no code.
       return array();
     }
   }
 
   /**
-   * Get an array of TwitterUser objects from an API endpoint
+   * Get an array of TwitterStatus objects matching a specified query.
+   *
+   * @param array $params
+   *   parameters including the search query.
+   *
+   * @return array
+   *   An array of TwitterStatus objects.
+   *
+   * @see https://dev.twitter.com/docs/api/1.1/get/search/tweets
+   */
+  protected function get_search_results($params = array()) {
+    $values = $this->call('search/tweets', $params, 'GET');
+    // Check on successfull call
+    if (isset($values) && isset($values['statuses'])) {
+      $statuses = array();
+      foreach ($values['statuses'] as $status) {
+        $statuses[] = new TwitterStatus($status);
+      }
+      return $statuses;
+    }
+    // Call might return FALSE , e.g. on failed authentication
+    else {
+      // As call already throws an exception, we can return an empty array to
+      // break no code.
+      return array();
+    }
+  }
+
+  /**
+   * Get an array of TwitterAccount objects from an API endpoint
    */
   protected function get_users($path, $params = array()) {
     $values = $this->call($path, $params, 'GET');
@@ -226,7 +278,7 @@ class Twitter {
     if ($values) {
       $users = array();
       foreach ($values as $user) {
-        $users[] = new TwitterUser($user);
+        $users[] = new TwitterAccount($user);
       }
       return $users;
     }
@@ -430,7 +482,7 @@ class Twitter {
    */
   public function search_tweets($query, $params = array()) {
     $params['q'] = $query;
-    return $this->get_statuses('statuses/oembed', $params);
+    return $this->get_search_results($params);
   }
 
   /********************************************//**
@@ -850,7 +902,7 @@ class Twitter {
    * @param array $params
    *   An array of parameters.
    * @return
-   *   A TwitterUser object or FALSE.
+   *   A TwitterAccount object or FALSE.
    * @see https://dev.twitter.com/docs/api/1.1/get/account/verify_credentials
    */
   public function verify_credentials($params = array()) {
@@ -858,7 +910,7 @@ class Twitter {
     if (!$values) {
       return FALSE;
     }
-    return new TwitterUser($values);
+    return new TwitterAccount($values);
   }
 
   /**
@@ -974,7 +1026,7 @@ class Twitter {
    * @param array $params
    *   An array of parameters.
    * @return
-   *   A TwitterUser object or FALSE.
+   *   A TwitterAccount object or FALSE.
    * @see https://dev.twitter.com/docs/api/1.1/get/blocks/list
    */
   public function blocks_list($params = array()) {
@@ -982,7 +1034,7 @@ class Twitter {
     if (!$values) {
       return FALSE;
     }
-    return new TwitterUser($values);
+    return new TwitterAccount($values);
   }
 
   /**
@@ -991,7 +1043,7 @@ class Twitter {
    * @param array $params
    *   An array of parameters.
    * @return
-   *   A TwitterUser object or FALSE.
+   *   A TwitterAccount object or FALSE.
    * @see https://dev.twitter.com/docs/api/1.1/get/blocks/ids
    */
   public function blocks_ids($params = array()) {
@@ -1067,28 +1119,24 @@ class Twitter {
   }
 
   /**
-   * Returns a variety of information about the user specified by the
-   * required user_id or screen_name parameter.
+   * Returns a variety of information about the user specified by the required
+   * screen_name parameter.
    *
-   * @param mixed $id
-   *   The numeric id or screen name of a Twitter user.
+   * @param string $screen_name
+   *   The screen name of a Twitter user.
    * @param bool $include_entities
    *   Whether to include entities or not.
+   *
    * @see https://dev.twitter.com/docs/api/1.1/get/users/show
    */
-  public function users_show($id, $include_entities = NULL) {
+  public function users_show($screen_name, $include_entities = NULL) {
     $params = array();
-    if (is_numeric($id)) {
-      $params['user_id'] = $id;
-    }
-    else {
-      $params['screen_name'] = $id;
-    }
+    $params['screen_name'] = $screen_name;
     if ($include_entities !== NULL) {
       $params['include_entities'] = $include_entities;
     }
     $values = $this->call('users/show', $params, 'GET');
-    return new TwitterUser($values);
+    return new TwitterAccount($values);
   }
 
   /**
@@ -1100,7 +1148,7 @@ class Twitter {
    * @param array $params
    *   an array of parameters.
    * @return
-   *   array of TwitterUser objects.
+   *   array of TwitterAccount objects.
    *
    * @see https://dev.twitter.com/docs/api/1.1/get/users/search
    */
@@ -1234,172 +1282,5 @@ class Twitter {
     }
 
     return $this->parse_response($response);
-  }
-}
-
-/**
- * Class for containing an individual twitter status.
- */
-class TwitterStatus {
-  /**
-   * @var created_at
-   */
-  public $created_at;
-
-  public $id;
-
-  public $text;
-
-  public $source;
-
-  public $truncated;
-
-  public $favorited;
-
-  public $in_reply_to_status_id;
-
-  public $in_reply_to_user_id;
-
-  public $in_reply_to_screen_name;
-
-  public $user;
-
-  /**
-   * Constructor for TwitterStatus
-   */
-  public function __construct($values = array()) {
-    $this->created_at = $values['created_at'];
-    $this->id = $values['id'];
-    $this->text = $values['text'];
-    $this->source = $values['source'];
-    $this->truncated = $values['truncated'];
-    $this->favorited = $values['favorited'];
-    $this->in_reply_to_status_id = $values['in_reply_to_status_id'];
-    $this->in_reply_to_user_id = $values['in_reply_to_user_id'];
-    $this->in_reply_to_screen_name = $values['in_reply_to_screen_name'];
-    if (isset($values['user'])) {
-      $this->user = new TwitterUser($values['user']);
-    }
-  }
-}
-
-class TwitterUser {
-
-  public $id;
-
-  public $screen_name;
-
-  public $name;
-
-  public $location;
-
-  public $description;
-
-  public $followers_count;
-
-  public $friends_count;
-
-  public $statuses_count;
-
-  public $favourites_count;
-
-  public $url;
-
-  public $protected;
-
-  public $profile_image_url;
-
-  public $profile_background_color;
-
-  public $profile_text_color;
-
-  public $profile_link_color;
-
-  public $profile_sidebar_fill_color;
-
-  public $profile_sidebar_border_color;
-
-  public $profile_background_image_url;
-
-  public $profile_background_tile;
-
-  public $verified;
-
-  public $created_at;
-
-  public $created_time;
-
-  public $utc_offset;
-
-  public $status;
-
-  protected $oauth_token;
-
-  protected $oauth_token_secret;
-
-  public function __construct($values = array()) {
-    $this->id = $values['id'];
-    $this->screen_name = $values['screen_name'];
-    $this->name = $values['name'];
-    $this->location = $values['location'];
-    $this->description = $values['description'];
-    $this->url = $values['url'];
-    $this->followers_count = $values['followers_count'];
-    $this->friends_count = $values['friends_count'];
-    $this->statuses_count = $values['statuses_count'];
-    $this->favourites_count = $values['favourites_count'];
-    $this->protected = $values['protected'];
-    $this->profile_image_url = $values['profile_image_url'];
-    $this->profile_background_color = $values['profile_background_color'];
-    $this->profile_text_color = $values['profile_text_color'];
-    $this->profile_link_color = $values['profile_link_color'];
-    $this->profile_sidebar_fill_color = $values['profile_sidebar_fill_color'];
-    $this->profile_sidebar_border_color = $values['profile_sidebar_border_color'];
-    $this->profile_background_image_url = $values['profile_background_image_url'];
-    $this->profile_background_tile = $values['profile_background_tile'];
-    $this->verified = $values['verified'];
-    $this->created_at = $values['created_at'];
-    if (!empty($values['uid'])) {
-      $this->uid = $values['uid'];
-    }
-    if (!empty($values['created_at']) && $created_time = strtotime($values['created_at'])) {
-      $this->created_time = $created_time;
-    }
-    $this->utc_offset = $values['utc_offset']?$values['utc_offset']:0;
-
-    if (isset($values['status'])) {
-      $this->status = new TwitterStatus($values['status']);
-    }
-  }
-
-  /**
-   * Returns an array with the authentication tokens.
-   *
-   * @return
-   *   array with the oauth token key and secret.
-   */
-  public function get_auth() {
-    return array('oauth_token' => $this->oauth_token, 'oauth_token_secret' => $this->oauth_token_secret);
-  }
-
-  /**
-   * Sets the authentication tokens to a user.
-   *
-   * @param array $values
-   *   Array with 'oauth_token' and 'oauth_token_secret' keys.
-   */
-  public function set_auth($values) {
-    $this->oauth_token = isset($values['oauth_token'])?$values['oauth_token']:NULL;
-    $this->oauth_token_secret = isset($values['oauth_token_secret'])?$values['oauth_token_secret']:NULL;
-  }
-
-  /**
-   * Checks whether the account is authenticated or not.
-   *
-   * @return
-   *   boolean TRUE when the account is authenticated.
-   */
-  public function is_auth() {
-    return !empty($this->oauth_token) && !empty($this->oauth_token_secret);
   }
 }
