@@ -67,7 +67,7 @@ projects[markdown][subdir] = "contrib"
 projects[markdown][version] = "1.2"
 
 projects[media][subdir] = "contrib"
-projects[media][version] = "2.x-dev"
+projects[media][version] = "2.0-beta1"
 
 projects[mobile_theme][subdir] = "contrib"
 projects[mobile_theme][version] = "1.2"
