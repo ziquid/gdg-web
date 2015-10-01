@@ -88,7 +88,7 @@ projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.2"
 
 projects[redirect][subdir] = "contrib"
-projects[redirect][version] = "1.0"
+projects[redirect][version] = "1.0-rc3"
 
 projects[rotating_banner][subdir] = "contrib"
 projects[rotating_banner][version] = "2.x-dev"
