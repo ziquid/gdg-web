@@ -45,8 +45,8 @@ projects[file_entity][version] = "2.0-beta2"
 projects[geshifilter][subdir] = "contrib"
 projects[geshifilter][version] = "1.2"
 
-projects[panels][subdir] = "contrib"
-projects[panels][version] = "3.5"
+projects[global_redirect][subdir] = "contrib"
+projects[global_redirect][version] = "1.0"
 
 projects[jcarousel][subdir] = "contrib"
 projects[jcarousel][version] = "2.7"
@@ -81,8 +81,14 @@ projects[noindex_external_links][version] = "2.0-rc1"
 projects[oauth][subdir] = "contrib"
 projects[oauth][version] = "3.2"
 
+projects[panels][subdir] = "contrib"
+projects[panels][version] = "3.5"
+
 projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.2"
+
+projects[redirect][subdir] = "contrib"
+projects[redirect][version] = "1.0"
 
 projects[rotating_banner][subdir] = "contrib"
 projects[rotating_banner][version] = "2.x-dev"
