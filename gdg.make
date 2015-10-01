@@ -45,8 +45,8 @@ projects[file_entity][version] = "2.0-beta2"
 projects[geshifilter][subdir] = "contrib"
 projects[geshifilter][version] = "1.2"
 
-projects[global_redirect][subdir] = "contrib"
-projects[global_redirect][version] = "1.0"
+projects[globalredirect][subdir] = "contrib"
+projects[globalredirect][version] = "1.5"
 
 projects[jcarousel][subdir] = "contrib"
 projects[jcarousel][version] = "2.7"
