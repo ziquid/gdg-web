@@ -13,7 +13,7 @@ projects[auto_nodetitle][subdir] = "contrib"
 projects[auto_nodetitle][version] = "1.0"
 
 projects[block_class][subdir] = "contrib"
-projects[block_class][version] = "2.1"
+projects[block_class][version] = "2.3"
 
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.9"
@@ -37,7 +37,7 @@ projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = "1.1"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "2.6"
+projects[features][version] = "2.7"
 
 projects[file_entity][subdir] = "contrib"
 projects[file_entity][version] = "2.0-beta2"
@@ -70,7 +70,7 @@ projects[media][subdir] = "contrib"
 projects[media][version] = "2.0-beta1"
 
 projects[node_clone][subdir] = "contrib"
-projects[node_clone][version] = "1.0-rc2"
+projects[node_clone][version] = "1.0"
 
 projects[noindex_external_links][subdir] = "contrib"
 projects[noindex_external_links][version] = "2.0-rc1"
@@ -82,7 +82,7 @@ projects[panels][subdir] = "contrib"
 projects[panels][version] = "3.5"
 
 projects[pathauto][subdir] = "contrib"
-projects[pathauto][version] = "1.2"
+projects[pathauto][version] = "1.3"
 
 projects[redirect][subdir] = "contrib"
 projects[redirect][version] = "1.0-rc3"
@@ -103,7 +103,7 @@ projects[token][subdir] = "contrib"
 projects[token][version] = "1.6"
 
 projects[twitter][subdir] = "contrib"
-projects[twitter][version] = "6.1"
+projects[twitter][version] = "6.2"
 
 projects[typogrify][subdir] = "contrib"
 projects[typogrify][version] = "1.0-rc10"
@@ -112,7 +112,7 @@ projects[video_embed_field][subdir] = "contrib"
 projects[video_embed_field][version] = "2.0-beta11"
 
 projects[views][subdir] = "contrib"
-projects[views][version] = "3.11"
+projects[views][version] = "3.13"
 
 projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.2"
