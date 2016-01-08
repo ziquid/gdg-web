@@ -69,9 +69,6 @@ projects[markdown][version] = "1.2"
 projects[media][subdir] = "contrib"
 projects[media][version] = "2.0-beta1"
 
-projects[mobile_theme][subdir] = "contrib"
-projects[mobile_theme][version] = "1.2"
-
 projects[node_clone][subdir] = "contrib"
 projects[node_clone][version] = "1.0-rc2"
 
