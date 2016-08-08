@@ -19,7 +19,7 @@ projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.9"
 
 projects[codefilter][subdir] = "contrib"
-projects[codefilter][version] = "1.1"
+projects[codefilter][version] = "1.2"
 
 projects[devel][subdir] = "contrib"
 projects[devel][version] = "1.5"
@@ -31,16 +31,16 @@ projects[fontyourface][subdir] = "contrib"
 projects[fontyourface][version] = "2.8"
 
 projects[entity][subdir] = "contrib"
-projects[entity][version] = "1.6"
+projects[entity][version] = "1.7"
 
 projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = "1.1"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "2.7"
+projects[features][version] = "2.10"
 
 projects[file_entity][subdir] = "contrib"
-projects[file_entity][version] = "2.0-beta2"
+projects[file_entity][version] = "2.0-beta3"
 
 projects[geshifilter][subdir] = "contrib"
 projects[geshifilter][version] = "1.2"
@@ -49,28 +49,28 @@ projects[globalredirect][subdir] = "contrib"
 projects[globalredirect][version] = "1.5"
 
 projects[google_analytics][subdir] = "contrib"
-projects[google_analytics][version] = "2.1"
+projects[google_analytics][version] = "2.2"
 
 projects[jcarousel][subdir] = "contrib"
 projects[jcarousel][version] = "2.7"
 
 projects[libraries][subdir] = "contrib"
-projects[libraries][version] = "2.2"
+projects[libraries][version] = "2.3"
 
 projects[lightbox2][subdir] = "contrib"
 projects[lightbox2][version] = "1.0-beta1"
 
 projects[link][subdir] = "contrib"
-projects[link][version] = "1.3"
+projects[link][version] = "1.4"
 
 projects[logintoboggan][subdir] = "contrib"
 projects[logintoboggan][version] = "1.5"
 
 projects[markdown][subdir] = "contrib"
-projects[markdown][version] = "1.2"
+projects[markdown][version] = "1.4"
 
 projects[media][subdir] = "contrib"
-projects[media][version] = "2.0-beta1"
+projects[media][version] = "2.0-beta2"
 
 projects[node_clone][subdir] = "contrib"
 projects[node_clone][version] = "1.0"
@@ -115,13 +115,15 @@ projects[video_embed_field][subdir] = "contrib"
 projects[video_embed_field][version] = "2.0-beta11"
 
 projects[views][subdir] = "contrib"
-projects[views][version] = "3.13"
+projects[views][version] = "3.14"
+
+projects[webform][subdir] = "contrib"
+projects[webform][version] = "4.13"
 
 projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.2"
 
 ; Themes
-projects[mobile][version] = "2.0"
 
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
 ; and url is the url of the download.
