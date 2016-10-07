@@ -3,11 +3,14 @@ core = 7.x
 api = 2
 
 ; Core
-projects[drupal][version] = "7.50"
+projects[drupal][version] = "7.51"
 
 ; Modules
 projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = "3.0-rc5"
+
+projects[adminrole][subdir] = "contrib"
+projects[adminrole][version] = "1.1"
 
 projects[auto_nodetitle][subdir] = "contrib"
 projects[auto_nodetitle][version] = "1.0"
@@ -16,10 +19,13 @@ projects[block_class][subdir] = "contrib"
 projects[block_class][version] = "2.3"
 
 projects[ctools][subdir] = "contrib"
-projects[ctools][version] = "1.9"
+projects[ctools][version] = "1.10"
 
 projects[codefilter][subdir] = "contrib"
 projects[codefilter][version] = "1.2"
+
+projects[date][subdir] = "contrib"
+projects[date][version] = "2.9"
 
 projects[devel][subdir] = "contrib"
 projects[devel][version] = "1.5"
@@ -31,10 +37,10 @@ projects[fontyourface][subdir] = "contrib"
 projects[fontyourface][version] = "2.8"
 
 projects[entity][subdir] = "contrib"
-projects[entity][version] = "1.7"
+projects[entity][version] = "1.8"
 
 projects[entityreference][subdir] = "contrib"
-projects[entityreference][version] = "1.1"
+projects[entityreference][version] = "1.2"
 
 projects[features][subdir] = "contrib"
 projects[features][version] = "2.10"
@@ -49,7 +55,10 @@ projects[globalredirect][subdir] = "contrib"
 projects[globalredirect][version] = "1.5"
 
 projects[google_analytics][subdir] = "contrib"
-projects[google_analytics][version] = "2.2"
+projects[google_analytics][version] = "2.3"
+
+projects[imagecache_token][subdir] = "contrib"
+projects[imagecache_token][version] = "1.0-rc2"
 
 projects[jcarousel][subdir] = "contrib"
 projects[jcarousel][version] = "2.7"
@@ -72,6 +81,9 @@ projects[markdown][version] = "1.4"
 projects[media][subdir] = "contrib"
 projects[media][version] = "2.0-beta2"
 
+projects[metatag][subdir] = "contrib"
+projects[metatag][version] = "1.17"
+
 projects[node_clone][subdir] = "contrib"
 projects[node_clone][version] = "1.0"
 
@@ -82,7 +94,7 @@ projects[oauth][subdir] = "contrib"
 projects[oauth][version] = "3.2"
 
 projects[panels][subdir] = "contrib"
-projects[panels][version] = "3.5"
+projects[panels][version] = "3.7"
 
 projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.3"
@@ -105,6 +117,9 @@ projects[subpathauto][version] = "1.3"
 projects[token][subdir] = "contrib"
 projects[token][version] = "1.6"
 
+projects[transliteration][subdir] = "contrib"
+projects[transliteration][version] = "3.2"
+
 projects[twitter][subdir] = "contrib"
 projects[twitter][version] = "6.2"
 
@@ -118,7 +133,7 @@ projects[views][subdir] = "contrib"
 projects[views][version] = "3.14"
 
 projects[webform][subdir] = "contrib"
-projects[webform][version] = "4.13"
+projects[webform][version] = "4.14"
 
 projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.2"
